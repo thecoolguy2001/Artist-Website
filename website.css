@@ -20,14 +20,17 @@ h1 {
   padding: 10px;
   background-color: #fff;
   border: 1px solid #ccc;
+  z-index: 1;
 }
 
 .navigation-bar a {
   margin: 0 10px;
   text-decoration: none;
   color:white;
+  z-index: 1;
 }
 
 .navigation-bar a:hover {
   color: #0f0;
+  z-index: 1;
 }
