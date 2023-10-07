@@ -17,19 +17,17 @@ h1 {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ccc;
   z-index: 1;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
 }
 
 .navigation-bar a {
   margin: 0 10px;
   text-decoration: none;
-  color:white;
-  z-index: 1;
+  color: white;
 }
-
 .navigation-bar a:hover {
   color: #0f0;
   z-index: 1;
