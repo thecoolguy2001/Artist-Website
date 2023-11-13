@@ -48,6 +48,40 @@
       height: 100%;
       display: block;
     }
+    .carousel {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+      z-index: 2;
+      display: flex;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
   </style>
 </head>
 <body>
@@ -66,7 +100,30 @@
     <img src="image3.jpg" alt="Image 3">
     <img src="image4.jpg" alt="Image 4">
   </div>
-  <button class="prev">Prev</button>
-  <button class="next">Next</button>
+  <button class="prev" onclick="changeSlide(-1)">Prev</button>
+  <button class="next" onclick="changeSlide(1)">Next</button>
+  <script>
+    // JavaScript for carousel functionality
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const slides = document.querySelectorAll('.carousel img');
+      currentSlide = (index + slides.length) % slides.length; // Ensure it wraps around
+
+      slides.forEach((slide, i) => {
+        if (i === currentSlide) {
+          slide.style.display = 'block';
+        } else {
+          slide.style.display = 'none';
+        }
+      });
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+
+    showSlide(currentSlide); // Display the initial slide
+  </script>
 </body>
 </html>
