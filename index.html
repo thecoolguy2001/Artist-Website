@@ -160,30 +160,29 @@ body {
     </div>
   </div>
 
-  <button class="prev" onclick="changeSlide(-1)">Prev</button>
-  <button class="next" onclick="changeSlide(1)">Next</button>
-  <script>
-    // JavaScript for carousel functionality
-    let currentSlide = 0;
+ <div class="carousel__control">
+    <button class="carousel__btn carousel__btn--back">&#8678; Prev</button>
+    <button class="carousel__btn carousel__btn--next">Next &#8680;</button>
+  </div>
+</div>
+ 
+ 
+    <script>
+ const next = document.querySelector(".carousel__btn--next"),
+  back = document.querySelector(".carousel__btn--back"),
+  carousel = document.querySelector(".carousel__cards");
+let angle = 0;
 
-    function showSlide(index) {
-      const slides = document.querySelectorAll('.carousel img');
-      currentSlide = (index + slides.length) % slides.length; // Ensure it wraps around
+next.addEventListener("click", () => {
+  angle -= 45;
+  carousel.style.transform = `translateZ(-25rem) rotateY(${angle}deg)`;
+});
 
-      slides.forEach((slide, i) => {
-        if (i === currentSlide) {
-          slide.style.display = 'block';
-        } else {
-          slide.style.display = 'none';
-        }
-      });
-    }
+back.addEventListener("click", () => {
+  angle += 45;
+  carousel.style.transform = `translateZ(-25rem) rotateY(${angle}deg)`;
+});
 
-    function changeSlide(direction) {
-      showSlide(currentSlide + direction);
-    }
-
-    showSlide(currentSlide); // Display the initial slide
-  </script>
+    </script>
 </body>
 </html>
