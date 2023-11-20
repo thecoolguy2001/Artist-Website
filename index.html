@@ -2,7 +2,74 @@
 <html>
 <head>
   <title>My Website</title>
-  <style>
+  <meta charset="UTF-8">
+
+  <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+  <style media="screen">
+    html {
+  box-sizing: border-box;
+   }  
+    *, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background: #07bdf4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    
+
+.carousel {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  perspective: 100rem;
+}
+.carousel__cards {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  transform-style: preserve-3d;
+  transform: translateZ(-25rem);
+  transition: transform 0.3s ease-in;
+}
+.carousel__img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.carousel__card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 0.2rem;
+  font-size: 3em;
+  font-weight: 700;
+}
+.carousel__card:nth-child(1) {
+  transform: rotateY(0deg) translateZ(25rem);
+}
+.carousel__card:nth-child(2) {
+  transform: rotateY(45deg) translateZ(25rem);
+}
+.carousel__card:nth-child(3) {
+  transform: rotateY(90deg) translateZ(25rem);
+}
+.carousel__card:nth-child(4) {
+  transform: rotateY(135deg) translateZ(25rem);
+}
     video {
       position: fixed;
       top: 0;
@@ -32,47 +99,7 @@
       text-decoration: none;
       color: white;
     }
-     <div class=”carousel”>
-  <div class=”carousel__cards”>
- 
-  </div>
-</div>
- html {
-  box-sizing: border-box;
-}
-*, *::after, *::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-size: cover;
-  background: #07bdf4;
-  display: flex;
-  justify-content: center;
-  font-family: sans-serif;
-  min-height: 100vh;
-  background-attachment: fixed;
-  align-items: center;
-}
-    
-.carousel {
-  align-items: center;
-  justify-content: space-between;
-  perspective: 100rem;
-  height: 60vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.carousel__cards {
-  position: relative;
-  width: 20rem;
-  height: 20rem;
-  transform-style: preserve-3d;
-  transform: translateZ(-25rem);
-  transition: transform 0.3s ease-in;
-}
+   
   </style>
 </head>
 <body>
@@ -85,47 +112,24 @@ body {
     <a href="#">Portfolio</a>
     <a href="#">Contact</a>
   </nav>
- <div class=”carousel__card”>
-      <img class=”carousel__img”
-           src=”image1.jpg” alt=”#”>
+ <div class="carousel">
+  <div class="carousel__cards">
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="image1.jpg" alt="oops!!">
     </div>
-    <div class=”carousel__card”>
-      <img class=”carousel__img”
-           src=”image2.jpg” alt=”#”>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="image2.jpg" alt="oops!!">
     </div>
-    <div class=”carousel__card”>
-      <img class=”carousel__img”
-           src=”image3.jpg” alt=”#”>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="image3.jpg" alt="oops!!">
     </div>
-    <div class=”carousel__card”>
-      <img class=”carousel__img”
-           src=”image4.jpg” alt=”#”>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="image4.jpg" alt="oops!!">
     </div>
-  .carousel__card {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border: 2px solid white;
-  border-radius: 0.2rem;
-  font-size: 3em;
-  font-weight: 700;
-}
-.carousel__img {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-}
-  .carousel__card:nth-child(1) {
-  transform: rotateY(0deg) translateZ(25rem);
-}
-.carousel__card:nth-child(2) {
-  transform: rotateY(45deg) translateZ(25rem);
-}
-.carousel__card:nth-child(3) {
-  transform: rotateY(90deg) translateZ(25rem);
-}
-.carousel__card:nth-child(4) {
-  transform: rotateY(135deg) translateZ(25rem);
 }
   <button class="prev" onclick="changeSlide(-1)">Prev</button>
   <button class="next" onclick="changeSlide(1)">Next</button>
