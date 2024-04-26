@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deshaun Walker</title>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+
+  <style media="screen">
+    
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('video.mp4'); /* Replace with your actual sky background image */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .navigation-bar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      padding: 10px;
+    }
+
+    .navigation-bar a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .navigation-bar a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+    @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  
+    /* Profile container to hold the image and bio, aligned to the left */
+    .profile-container {
+      position: absolute;
+      left: 0; /* Align to the left edge of the viewport */
+      top: 50%; /* Center vertically */
+      transform: translateY(-50%);
+      animation-name: fadeIn;
+    animation-duration: 1s; /* Adjust the time as needed */
+    animation-fill-mode: both;
+    }
+
+    .profile-picture {
+      max-width: 100%; /* Use max-width to constrain the image width */
+      height: auto; /* Keep the aspect ratio */
+      border-radius: 5px;
+      animation-name: fadeIn;
+    animation-duration: 1s; /* Adjust the time as needed */
+    animation-fill-mode: both;
+    }
+
+    /* Style for the biography section */
+    
+    /* Container for the right-aligned text */
+/* Container for the right-aligned text */
+/* Container for the right-aligned text */
+.text-container {
+  position: absolute;
+  top: 40%; /* Vertically center the container */
+  right: 10%; /* Adjust the percentage to move the text to the right place */
+  transform: translateY(-50%); /* Center the container */
+  text-align: center; /* Align text to the right */
+  color: #FFFFFF; /* Assuming the text is white */
+  width: 30%; /* Adjust the width as necessary */
+  animation-name: fadeIn;
+    animation-duration: 1s; /* Adjust the time as needed */
+    animation-fill-mode: both;
+}
+
+/* Style for the title */
+.art-title {
+  font-size: 4em; /* Adjust the size as needed */
+  margin-bottom: 0.3em; /* Adjust the space between title and details */
+  font-weight: dark;
+  animation-name: fadeIn;
+    animation-duration: 1s; /* Adjust the time as needed */
+    animation-fill-mode: both;
+}
+
+/* Style for the details */
+.art-details p {
+  margin: 0;
+  font-size: 1.2em; /* Adjust the size as needed */
+  margin-bottom: 0.2em; /* Adjust the space between lines of details */
+  animation-name: fadeIn;
+    animation-duration: 1s; /* Adjust the time as needed */
+    animation-fill-mode: both;
+}
+
+/* Style for additional description if needed */
+.art-description p {
+  font-size: 1.5em; /* Adjust the size as needed */
+  margin-top: 2em; /* Adjust the space above the description */
+  animation-name: fadeIn;
+    animation-duration: 1s; /* Adjust the time as needed */
+    animation-fill-mode: both;
+  
+}
+
+
+  </style>
+</head>
+<body>
+
+  <h1><a href="index.html" style="color: white; text-decoration: none;">My Website</a></h1>
+  <nav class="navigation-bar">
+    <a href="newabout.html">About</a>
+    <a href="newport.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  
+  <div class="profile-container">
+    <img src="actafoolcat.png" alt="Deshaun Walker" class="profile-picture">
+    
+    </div>
+  </div>
+
+  <div class="text-container">
+    <div class="art-title">Deshaun Walker</div>
+    <div class="art-details">
+      <p>Artist</p>
+      <p></p>
+    </div>
+    <div class="art-description">
+      <p>Based In Los Angeles, CA</p>
+    </div>
+  </div>
+  
+</body>
+</html>
