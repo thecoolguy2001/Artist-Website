@@ -4,12 +4,128 @@
     <title>Deshaun Walker</title>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  
+    <style media="screen">
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      body {
+        position: relative;
+        font-family: sans-serif;
+      }
+
+      .video-bg {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+      }
+
+      .navigation-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        padding: 10px;
+      }
+
+      .navigation-bar a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+      }
+
+      .navigation-bar a:hover {
+        text-decoration: underline;
+      }
+
+      h1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 10px;
+        color: white;
+        z-index: 100;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .portfolio {
+        position: fixed;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow-y: auto;
+        margin: 0 auto;
+        width: 80%;
+        z-index: 50;
+        animation-name: fadeIn;
+        animation-duration: 1s; /* Adjust the time as needed */
+        animation-fill-mode: both;
+      }
+
+      .year {
+        font-size: 36px;
+        margin: 20px 0;
+        text-align: center;
+        color: white;
+        animation-name: fadeIn;
+        animation-duration: 1s; /* Adjust the time as needed */
+        animation-fill-mode: both;
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        animation-name: fadeIn;
+        animation-duration: 1s; /* Adjust the time as needed */
+        animation-fill-mode: both;
+      }
+
+      .gallery img {
+        width: calc(33.333% - 10px);
+        height: auto;
+        aspect-ratio: 1/1; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure images cover the entire area */
+        animation-name: fadeIn;
+        animation-duration: 1s; /* Adjust the time as needed */
+        animation-fill-mode: both;
+      }
+
+      @media (max-width: 600px) {
+        .gallery img {
+          width: calc(50% - 10px);
+        }
+      }
+    </style>
 </head>
 <body>
-    <h1> <a href="caro.html">
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <h1><a href="caro.html">
         <img src="1imagehomenew.png" alt="My Website" style="height: 125px; width: auto;"/>
-      </a></h1>
+    </a></h1>
+
     <nav class="navigation-bar">
         <a href="about.html">About</a>
         <a href="index.html">Portfolio</a>
@@ -18,22 +134,19 @@
     
     <div class="portfolio">
         <!-- Portfolio content here -->
-        
-        <div class="year">2023</div>
+        <div class="year"></div>
         <div class="gallery">
-            <img src="portd9.JPEG" alt="Portfolio Image 1">
-            <img src="portd8.JPG" alt="Portfolio Image 2">
+            <img src="portfolio-image1.jpg" alt="Portfolio Image 1">
+            <img src="portd8.JPEG" alt="Portfolio Image 2">
             <img src="portd7.jpg" alt="Portfolio Image 3">
-            <img src="portd6.jpg" alt="Portfolio Image 1">
-            <img src="portd5.jpg" alt="Portfolio Image 2">
-            <img src="portd4.jpg" alt="Portfolio Image 3">
-            <img src="portd3.png" alt="Portfolio Image 1">
-            <img src="portd2.png" alt="Portfolio Image 2">
-            <img src="portd1.png" alt="Portfolio Image 3">
+            <img src="portd6.jpg" alt="Portfolio Image 4">
+            <img src="portd5.jpg" alt="Portfolio Image 5">
+            <img src="portd4.jpg" alt="Portfolio Image 6">
+            <img src="portd3.png" alt="Portfolio Image 7">
+            <img src="portd2.png" alt="Portfolio Image 8">
+            <img src="portd1.png" alt="Portfolio Image 9">
         </div>
-
         <!-- Repeat sections for other years -->
-        
     </div>
 </body>
 </html>
