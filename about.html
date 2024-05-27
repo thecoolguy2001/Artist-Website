@@ -60,26 +60,7 @@
   }
 
   
-    /* Profile container to hold the image and bio, aligned to the left */
-    .profile-container {
-      position: absolute;
-      left: 0; /* Align to the left edge of the viewport */
-      top: 50%; /* Center vertically */
-      transform: translateY(-50%);
-      animation-name: fadeIn;
-    animation-duration: 1s; /* Adjust the time as needed */
-    animation-fill-mode: both;
-    }
-
-    .profile-picture {
-      max-width: 100%; /* Use max-width to constrain the image width */
-      height: auto; /* Keep the aspect ratio */
-      border-radius: 5px;
-      animation-name: fadeIn;
-    animation-duration: 1s; /* Adjust the time as needed */
-    animation-fill-mode: both;
-    }
-
+   
     /* Style for the biography section */
     
     /* Container for the right-aligned text */
@@ -87,15 +68,15 @@
 /* Container for the right-aligned text */
 .text-container {
   position: absolute;
-  top: 40%; /* Vertically center the container */
-  right: 10%; /* Adjust the percentage to move the text to the right place */
-  transform: translateY(-50%); /* Center the container */
-  text-align: center; /* Align text to the right */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to truly center */
+  text-align: center; /* Align text to the center */
   color: #FFFFFF; /* Assuming the text is white */
   width: 30%; /* Adjust the width as necessary */
   animation-name: fadeIn;
-    animation-duration: 1s; /* Adjust the time as needed */
-    animation-fill-mode: both;
+  animation-duration: 1s; /* Adjust the time as needed */
+  animation-fill-mode: both;
 }
 
 /* Style for the title */
@@ -133,18 +114,16 @@
 </head>
 <body>
 
-  <h1><a href="index.html" style="color: white; text-decoration: none;">My Website</a></h1>
+  <h1> <a href="caro.html">
+    <img src="1imagehomenew.png" alt="My Website" style="height: 125px; width: auto;"/>
+  </a></h1>
   <nav class="navigation-bar">
-    <a href="newabout.html">About</a>
-    <a href="newport.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="port.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
   
-  <div class="profile-container">
-    <img src="actafoolcat.png" alt="Deshaun Walker" class="profile-picture">
-    
-    </div>
-  </div>
+  
 
   <div class="text-container">
     <div class="art-title">Deshaun Walker</div>
@@ -153,7 +132,8 @@
       <p></p>
     </div>
     <div class="art-description">
-      <p>Based In Los Angeles, CA</p>
+      <p>I am currently an artist/designer located in Atlanta, Georgia. Experimentation has always been something that defines why I make work. There is a form of freedom that comes with experimentation that I am constantly chasing, the freedom to create. Deshaun’s unique style is a product of his upbringing, allowing him to bring his work to life. From the influence of cartoons, religion, art, and teachings he was brought up on, Deshaun uses his personal experience to create his reflection on modernity.
+      </p>
     </div>
   </div>
   
