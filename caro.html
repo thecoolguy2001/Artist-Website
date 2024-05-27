@@ -1,0 +1,227 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Deshaun Walker</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+  
+    <style media="screen">
+        html, body {
+      height: 100%;
+      margin: 0;
+    }
+    
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('video.mp4'); /* Replace with your actual sky background image */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .navigation-bar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      padding: 10px;
+    }
+
+    .navigation-bar a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .navigation-bar a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+    @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  
+        .carousel, .carousel__img {
+    animation-name: fadeIn;
+    animation-duration: 1s; /* Adjust the time as needed */
+    animation-fill-mode: both;
+  }
+
+
+  .carousel {
+  height: 100vh; /* Make carousel take the full height of the viewport */
+  width: 100%; /* Ensure it takes the full width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+  perspective: 1000px; /* You might want to adjust or remove the perspective if not needed */
+}
+.carousel__cards {
+  position: relative;
+  width: 18rem;
+  height: 18rem;
+  transform-style: preserve-3d;
+  transform: translateZ(-25rem);
+  transition: transform 1s ease-in-out; /* Adjusted for smoother transition */
+
+}
+.carousel__img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.carousel__card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 2px solid grey;
+  border-radius: 0.2rem;
+  font-size: 3em;
+  font-weight: 700;
+}
+.carousel__card:nth-child(1) {
+  transform: rotateY(0deg) translateZ(25rem);
+}
+.carousel__card:nth-child(2) {
+  transform: rotateY(45deg) translateZ(25rem);
+}
+.carousel__card:nth-child(3) {
+  transform: rotateY(90deg) translateZ(25rem);
+}
+.carousel__card:nth-child(4) {
+  transform: rotateY(135deg) translateZ(25rem);
+}
+    .carousel__card:nth-child(5) {
+  transform: rotateY(180deg) translateZ(25rem);
+}
+.carousel__card:nth-child(6) {
+  transform: rotateY(225deg) translateZ(25rem);
+}
+.carousel__card:nth-child(7) {
+  transform: rotateY(270deg) translateZ(25rem);
+}
+.carousel__card:nth-child(8) {
+  transform: rotateY(315deg) translateZ(25rem);
+}
+    </style>
+</head>
+<body>
+    <h1> <a href="caro.html">
+        <img src="1imagehomenew.png" alt="My Website" style="height: 125px; width: auto;"/>
+      </a></h1>
+    <nav class="navigation-bar">
+        <a href="about.html">About</a>
+        <a href="index.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    
+    <div class="carousel">
+        <div class="carousel__cards">
+          <div class="carousel__card">
+            <img class="carousel__img"
+                 src="1imagehomenew.png" alt="oops!!">
+          </div>
+          <div class="carousel__card">
+            <img class="carousel__img"
+                 src="portd7.jpg" alt="oops!!">
+          </div>
+          <div class="carousel__card">
+            <img class="carousel__img"
+                 src="portd6.jpg" alt="oops!!">
+          </div>
+          <div class="carousel__card">
+            <img class="carousel__img"
+                 src="portd5.jpg" alt="oops!!">
+          </div>
+           <div class="carousel__card">
+            <img class="carousel__img"
+                 src="portd4.jpg" alt="oops!!">
+          </div>
+          <div class="carousel__card">
+            <img class="carousel__img"
+                 src="portd3.png" alt="oops!!">
+          </div>
+          <div class="carousel__card">
+            <img class="carousel__img"
+                 src="portd2.png" alt="oops!!">
+          </div>
+          <div class="carousel__card">
+            <img class="carousel__img"
+                 src="portd1.png" alt="oops!!">
+          </div>
+        </div>
+      
+      
+      </div>
+       
+       
+      <script>
+        const carousel = document.querySelector(".carousel__cards");
+        let angle = 0;
+      
+        // Event listener for keyboard arrow key navigation
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'ArrowRight') {
+            angle -= 45;
+          } else if (event.key === 'ArrowLeft') {
+            angle += 45;
+          }
+          carousel.style.transform = `translateZ(-25rem) rotateY(${angle}deg)`;
+        });
+      
+        // Automatic rotation
+        let autoRotate = setInterval(() => {
+          angle -= 45;
+          carousel.style.transform = `translateZ(-25rem) rotateY(${angle}deg)`;
+        }, 3000);
+      
+        const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
+          const renderer = new THREE.WebGLRenderer({ alpha: true });
+          renderer.setSize(600, 400);
+          document.getElementById('model-container').appendChild(renderer.domElement);
+      
+          // Load the model
+          const loader = new THREE.GLTFLoader();
+          loader.load('logo.v2.glb', function (glb) {
+            scene.add(glb.scene);
+          }, undefined, function (error) {
+            console.error(error);
+          });
+      
+          camera.position.z = 5;
+      
+          // Animation loop
+          const animate = function () {
+            requestAnimationFrame(animate);
+            // Rotate the model
+            if (scene.children.length > 0) {
+              scene.children[0].rotation.y += 0.01;
+            }
+            renderer.render(scene, camera);
+          };
+      
+          animate();
+      </script>
+</body>
+</html>
