@@ -24,33 +24,44 @@
     animation-fill-mode: both;
     }
 
+      .video-bg {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+      }
+
     .navigation-bar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 2;
-      padding: 10px;
-    }
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        padding: 10px;
+      }
 
-    .navigation-bar a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: white;
-      transition: text-decoration 0.3s;
-      cursor: pointer;
-    }
-    .navigation-bar a:hover {
-      text-decoration: underline;
-    }
+      .navigation-bar a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+      }
 
-    h1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0; /* No padding to ensure it is at the very corner */
-  color: white;
-}
+      .navigation-bar a:hover {
+        text-decoration: underline;
+      }
+
+      h1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 10px;
+        color: white;
+        z-index: 100;
+      }
+    
 @keyframes fadeIn {
     from {
       opacity: 0;
@@ -102,6 +113,7 @@
       animation-name: fadeIn;
     animation-duration: 1s; /* Adjust the time as needed */
     animation-fill-mode: both;
+    min-width: 60px;
     }
 
     .contact-form input[type='submit']:hover {
@@ -113,13 +125,17 @@
   </style>
 </head>
 <body>
+  <video autoplay muted loop playsinline class="video-bg">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
 
-  <h1> <a href="index.html">
-    <img src="imagehome.png" alt="My Website" style="height: 500px; width: auto;"/> <!-- Adjust height as needed -->
-  </h1>
+  <h1> <a href="caro.html">
+    <img src="1imagehomenew.png" alt="My Website" style="height: 125px; width: auto;"/>
+  </a></h1>
   <nav class="navigation-bar">
-    <a href="newabout.html">About</a>
-    <a href="newport.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="index.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
 
@@ -128,13 +144,51 @@
       <h2>Contact</h2>
     </div>
     
-    <form action="/action_page.php">
+    <!-- Updated form tag with id for AJAX -->
+    <form id="contactForm" action="https://formspree.io/f/xeqyvblg" method="POST">
       <input type="text" id="name" name="name" placeholder="Name">
       <input type="text" id="email" name="email" placeholder="Email address">
       <textarea id="message" name="message" placeholder="Message" style="height:150px"></textarea>
       <input type="submit" value="Submit">
     </form>
+    <div id="formFeedback"></div> <!-- Element to display the feedback message -->
   </div>
 
+  <!-- Include your JavaScript at the bottom of the body for better load times -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Include jQuery -->
+  <script>
+    $(document).ready(function(){
+      $('#contactForm').submit(function(event){
+        event.preventDefault(); // Prevent the default form submit
+  
+        var submitButton = $('#contactForm input[type="submit"]');
+        var originalButtonText = submitButton.val();
+        var originalButtonColor = submitButton.css('background-color'); // Store the original color
+  
+        $.ajax({
+          url: 'https://formspree.io/f/xeqyvblg', // Your Formspree endpoint
+          method: 'POST',
+          data: $(this).serialize(),
+          dataType: 'json',
+          
+          success: function(data) {
+            submitButton.val('Thanks!').css('background-color', 'green'); // Change button text to 'Thank you!' and color to green
+            $('#contactForm')[0].reset(); // Clear the form fields
+            // Reset the button after 2 seconds
+            setTimeout(function(){
+              submitButton.val(originalButtonText).css('background-color', originalButtonColor).removeAttr('disabled');
+            }, 2000);
+          },
+          error: function(err) {
+            submitButton.val('Error!').css('background-color', 'red'); // Change button text to 'Error!' and color to red
+            // Reset the button after 2 seconds
+            setTimeout(function(){
+              submitButton.val(originalButtonText).css('background-color', originalButtonColor).removeAttr('disabled');
+            }, 2000);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
