@@ -12,44 +12,52 @@
       height: 100%;
       margin: 0;
     }
-    
-    body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-image: url('video.mp4'); /* Replace with your actual sky background image */
-      background-size: cover;
-      background-position: center;
-    }
+     body {
+        position: relative;
+        font-family: sans-serif;
+        justify-content: center;
+        align-items: center;
+      }
 
-    .navigation-bar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 2;
-      padding: 10px;
-    }
+      .video-bg {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+      }
 
-    .navigation-bar a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: white;
-      cursor: pointer;
-    }
+        .navigation-bar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 100;
+            padding: 10px;
+        }
 
-    .navigation-bar a:hover {
+        .navigation-bar a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+        }
+      .navigation-bar a:hover {
       text-decoration: underline;
-    }
+    
+      }
 
-    h1 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 0;
-        padding: 0;
-        color: white;
-    }
+        h1 {
+            position: fixed; /* Keep the header fixed as well */
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 10px; /* Adjust padding to position your title */
+            color: white;
+            z-index: 100; /* Ensure it's above other elements */
+        }
+
+    
     @keyframes fadeIn {
     from {
       opacity: 0;
@@ -113,13 +121,17 @@
   </style>
 </head>
 <body>
+  <video autoplay muted loop playsinline class="video-bg">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
 
   <h1> <a href="caro.html">
     <img src="1imagehomenew.png" alt="My Website" style="height: 125px; width: auto;"/>
   </a></h1>
   <nav class="navigation-bar">
     <a href="about.html">About</a>
-    <a href="port.html">Portfolio</a>
+    <a href="index.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
   
@@ -132,7 +144,11 @@
       <p></p>
     </div>
     <div class="art-description">
-      <p>I am currently an artist/designer located in Atlanta, Georgia. Experimentation has always been something that defines why I make work. There is a form of freedom that comes with experimentation that I am constantly chasing, the freedom to create. Deshaun’s unique style is a product of his upbringing, allowing him to bring his work to life. From the influence of cartoons, religion, art, and teachings he was brought up on, Deshaun uses his personal experience to create his reflection on modernity.
+      <p>I am currently an artist/designer located in Atlanta, Georgia. Experimentation has always been something that defines why I make work.
+        There is a form of freedom that comes with experimentation that I am constantly chasing, the freedom to create.
+        My unique style is a product of his upbringing, allowing him to bring his work to life. 
+        From the influence of cartoons, religion, art, and teachings he was brought up on, 
+        I uses his personal experience to create his reflection on modernity.
       </p>
     </div>
   </div>
